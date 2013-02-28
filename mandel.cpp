@@ -2,6 +2,7 @@
 #include <complex>
 #include <vector>
 #include <chrono>
+#include <functional>
 
 #include "window.h"
 #include "save_image.h"
