@@ -48,7 +48,7 @@ void get_number_iterations(window<int> &scr, window<double> &fract, int iter_max
 }
 
 void fractal(window<int> &scr, window<double> &fract, int iter_max, std::vector<int> &colors,
-	const std::function<Complex( Complex, Complex)> &func), const char *fname, bool smooth_color) {
+	const std::function<Complex( Complex, Complex)> &func, const char *fname, bool smooth_color) {
 	auto start = std::chrono::steady_clock::now();
 	get_number_iterations(scr, fract, iter_max, colors, func);
 	auto end = std::chrono::steady_clock::now();
