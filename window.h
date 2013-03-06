@@ -11,20 +11,20 @@ public:
 	{}
 
 // Utility functions for getting the size, width and height of the window
-	T size() {
+	T size() const {
 		return (width() * height());
 	}
 
-	T width() {
+	T width() const {
 		return (_x_max - _x_min);
 	}
 
-	T height() {
+	T height() const {
 		return (_y_max - _y_min);
 	}
 
 // Getters and setters for the window elements
-	T x_min() {
+	T x_min() const {
 		return _x_min;
 	}
 
@@ -32,7 +32,7 @@ public:
 		_x_min = x_min;
 	}	
 
-	T x_max() {
+	T x_max() const {
 		return _x_max;
 	}
 
@@ -40,7 +40,7 @@ public:
 		_x_max = x_max;
 	}		
 
-	T y_min() {
+	T y_min() const {
 		return _y_min;
 	}
 
@@ -48,7 +48,7 @@ public:
 		_y_min = y_min;
 	}		
 
-	T y_max() {
+	T y_max() const {
 		return _y_max;
 	}
 
