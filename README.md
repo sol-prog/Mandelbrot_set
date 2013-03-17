@@ -11,7 +11,7 @@ In order to compile on your machine you'll need FreeImage installed. The code wa
 
 g++ -std=c++11 -O3 save_image.cpp utils.cpp mandel.cpp -lfreeimage
 
-* If you use Ubuntu 12.04, the default GCC is 4.6.x. You can still compile the code by **commenting** any line that uses the <chrono> header, you need to do this only in mandel.cpp. You can compile the code with:
+* If you use Ubuntu 12.04, the default GCC is 4.6.x. You can still compile the code by **commenting** any line that uses the &lt;chrono&gt; header, you need to do this only in mandel.cpp. You can compile the code with:
 
 g++ -std=c++0x save_image.cpp utils.cpp mandel.cpp -lfreeimage
 
