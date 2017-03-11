@@ -36,13 +36,17 @@ int escape(Complex c, int iter_max, const std::function<Complex( Complex, Comple
 // Loop over each pixel from our image and check if the points associated with this pixel escape to infinity
 void get_number_iterations(window<int> &scr, window<double> &fract, int iter_max, std::vector<int> &colors,
 	const std::function<Complex( Complex, Complex)> &func) {
-	int k = 0;
+	int k = 0, progress = -1;
 	for(int i = scr.y_min(); i < scr.y_max(); ++i) {
 		for(int j = scr.x_min(); j < scr.x_max(); ++j) {
 			Complex c((double)j, (double)i);
 			c = scale(scr, fract, c);
 			colors[k] = escape(c, iter_max, func);
 			k++;
+		}
+		if(progress < (int)(i*100.0/scr.y_max())){
+			progress = (int)(i*100.0/scr.y_max());
+			std::cout << progress << "%\n";
 		}
 	}
 }
