@@ -46,7 +46,9 @@ void get_number_iterations(window<int> &scr, window<double> &fract, int iter_max
 		}
 		if(progress < (int)(i*100.0/scr.y_max())){
 			progress = (int)(i*100.0/scr.y_max());
-			std::cout << progress << "%\n";
+			std::cerr<<char(13);
+			std::cout<<"Progress = " << progress<< " %";
+			
 		}
 	}
 }
@@ -56,6 +58,7 @@ void fractal(window<int> &scr, window<double> &fract, int iter_max, std::vector<
 	auto start = std::chrono::steady_clock::now();
 	get_number_iterations(scr, fract, iter_max, colors, func);
 	auto end = std::chrono::steady_clock::now();
+	std::cerr<<char(13);
 	std::cout << "Time to generate " << fname << " = " << std::chrono::duration <double, std::milli> (end - start).count() << " [ms]" << std::endl;
 
 	// Save (show) the result as an image
